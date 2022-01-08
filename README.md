@@ -1,2 +1,32 @@
-# co2mini
-Golang Module to use co2meter code derived from https://hackaday.io/project/5301-reverse-engineering-a-low-cost-usb-co-monitor
+# co2mini_exporter
+
+A Prometheus exporter for CO2-MINI.
+
+## requirements
+
+* Linux
+* go compiler
+
+## build
+
+```bash
+$ go build
+```
+
+## run
+
+```bash
+$ ./co2mini_exporter &
+```
+
+## get metrics
+
+```bash
+$ curl http://localhost:9002/metrics
+```
+
+## stop
+
+```bash
+$ pkill co2mini_exporter
+```
