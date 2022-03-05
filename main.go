@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -62,6 +63,9 @@ func monitor(device hid.Device) {
 }
 
 func main() {
+	var listen = flag.String("listen", ":9002", "metrics listen address")
+	flag.Parse()
+
 	// define metrics
 	prometheus.MustRegister(co2Gauge)
 	prometheus.MustRegister(temperatureGauge)
@@ -81,5 +85,5 @@ func main() {
 
 	// start HTTP server
 	http.Handle("/metrics", promhttp.Handler())
-	log.Fatal(http.ListenAndServe(":9002", nil))
+	log.Fatal(http.ListenAndServe(*listen, nil))
 }
