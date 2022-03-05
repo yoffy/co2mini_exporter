@@ -7,26 +7,22 @@ A Prometheus exporter for CO2-MINI.
 * Linux
 * go compiler
 
-## build
+## install
 
 ```bash
-$ go build
+$ make && sudo make install
 ```
 
-## run
+It is installed as co2mini_exporter.service.
+
+## uninstall
 
 ```bash
-$ ./co2mini_exporter &
+$ sudo make uninstall
 ```
 
 ## get metrics
 
 ```bash
 $ curl http://localhost:9002/metrics
-```
-
-## stop
-
-```bash
-$ pkill co2mini_exporter
 ```

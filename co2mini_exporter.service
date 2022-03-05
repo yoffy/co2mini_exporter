@@ -1,0 +1,12 @@
+[Unit]
+Description = co2mini exporter
+
+[Service]
+ExecStart = /usr/local/bin/co2mini_exporter
+Restart = always
+Type = simple
+User = co2mini_exporter
+Group = plugdev
+
+[Install]
+WantedBy = multi-user.target
