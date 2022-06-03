@@ -1,5 +1,7 @@
 [Unit]
 Description = co2mini exporter
+Wants = dev-co2mini.device
+After = dev-co2mini.device
 
 [Service]
 ExecStart = /usr/local/bin/co2mini_exporter
